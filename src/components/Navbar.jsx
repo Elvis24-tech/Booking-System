@@ -2,19 +2,18 @@ import { Link } from "react-router-dom";
 
 export default function Navbar() {
   return (
-    <nav className="bg-white shadow-md sticky top-0 z-50">
+    <div className="fixed top-0 w-full z-50 backdrop-blur-xl bg-white/5 border-b border-white/10">
       <div className="max-w-6xl mx-auto flex justify-between items-center p-4">
-        <h1 className="text-xl font-bold text-blue-600">BookEase</h1>
+        <h1 className="text-xl font-bold tracking-wide text-cyan-400">
+          BookFlow
+        </h1>
 
-        <div className="space-x-6 font-medium">
-          <Link to="/">Home</Link>
-          <Link to="/services">Services</Link>
-          <Link to="/book">Book</Link>
-          <Link to="/admin" className="text-blue-600">
-            Admin
-          </Link>
+        <div className="flex gap-6 text-sm text-gray-300">
+          <Link className="hover:text-white" to="/">Home</Link>
+          <Link className="hover:text-white" to="/services">Services</Link>
+          <Link className="hover:text-white" to="/admin">Admin</Link>
         </div>
       </div>
-    </nav>
+    </div>
   );
 }

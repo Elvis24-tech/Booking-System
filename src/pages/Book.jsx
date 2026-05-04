@@ -20,42 +20,46 @@ export default function Book() {
       ...form,
     };
 
-    console.log("BOOKING:", booking);
-    alert("Booking successful!");
+    console.log(booking);
+    alert("Booking confirmed 🚀");
   };
 
   return (
-    <div className="max-w-xl mx-auto p-6">
-      <h1 className="text-2xl font-bold mb-4">
-        Book: {state?.name || "Service"}
+    <div className="max-w-xl mx-auto px-6 py-10">
+
+      <h1 className="text-2xl font-bold mb-6">
+        Book: <span className="text-cyan-400">{state?.name}</span>
       </h1>
 
-      <form onSubmit={handleSubmit} className="space-y-4 bg-white p-6 shadow rounded-xl">
+      <form
+        onSubmit={handleSubmit}
+        className="bg-white/5 border border-white/10 p-6 rounded-2xl space-y-4"
+      >
         <input
           placeholder="Full Name"
-          className="w-full p-3 border rounded"
+          className="w-full p-3 bg-black/30 border border-white/10 rounded-lg"
           onChange={(e) => setForm({ ...form, name: e.target.value })}
         />
 
         <input
           placeholder="Phone Number"
-          className="w-full p-3 border rounded"
+          className="w-full p-3 bg-black/30 border border-white/10 rounded-lg"
           onChange={(e) => setForm({ ...form, phone: e.target.value })}
         />
 
         <input
           type="date"
-          className="w-full p-3 border rounded"
+          className="w-full p-3 bg-black/30 border border-white/10 rounded-lg"
           onChange={(e) => setForm({ ...form, date: e.target.value })}
         />
 
         <input
           type="time"
-          className="w-full p-3 border rounded"
+          className="w-full p-3 bg-black/30 border border-white/10 rounded-lg"
           onChange={(e) => setForm({ ...form, time: e.target.value })}
         />
 
-        <button className="w-full bg-blue-600 text-white py-3 rounded-lg hover:bg-blue-700">
+        <button className="w-full bg-cyan-500 text-black py-3 rounded-lg font-semibold hover:bg-cyan-400">
           Confirm Booking
         </button>
       </form>
